@@ -156,9 +156,13 @@ MonoBehaviour:
   - {fileID: 1801263428120863714, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
   - {fileID: -5971942374765049077, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
   itemNames:
-  - Slurper
-  - Magic of magicness
-  - Yes?
+  - Thingamabob
+  - Thingy
+  - Thingamajig
+  - Whatchamacallit
+  - Whatsit
+  - Doohickey
+  - Doodad
   allTriggers: 05000000
   allEffects:
   - {fileID: 11400000, guid: 50e94d70e520c81479843eb938f02c41, type: 2}
