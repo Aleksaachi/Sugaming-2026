@@ -8,6 +8,7 @@ public class PlayerItemHolder : MonoBehaviour
     void Awake()
     {
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
     public static void TriggerItems(Trigger trigger)
     {
