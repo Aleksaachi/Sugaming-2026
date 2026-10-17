@@ -41,8 +41,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
+        moveInput.x = Input.GetAxis("Horizontal");
+        moveInput.y = Input.GetAxis("Vertical");
 
         if(moveInput != Vector2.zero)
             lastFacingDirection = moveInput.normalized;
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rb.linearVelocity = moveInput.normalized * moveSpeed;
+        rb.linearVelocity = moveInput * moveSpeed;
     }
     private void Attack()
     {
@@ -81,16 +81,16 @@ public class PlayerController : MonoBehaviour
         {
             anim = Instantiate(animAttackSide, transform.position, Quaternion.identity);
             anim.transform.SetParent(transform);
-            anim.transform.localScale = new Vector3(attackDir.x, 1, 1);
-            anim.transform.localPosition = new Vector3(attackDir.x*1.2f, 0.5f, 0);
+            anim.transform.localScale = new Vector3(Mathf.Sign(attackDir.x), 1);
+            anim.transform.localPosition = new Vector3(Mathf.Sign(attackDir.x)*1.2f, 0.5f, 0);
             Destroy(anim, 0.74f);
         }
         else
         {
             anim = Instantiate(animAttackDown, transform.position, Quaternion.identity);
             anim.transform.SetParent(transform);
-            anim.transform.localScale = new Vector3(1, -attackDir.y, 1);
-            anim.transform.localPosition = new Vector3(0, 1.1f * attackDir.y, 0);
+            anim.transform.localScale = new Vector3(1, -Mathf.Sign(attackDir.y), 1);
+            anim.transform.localPosition = new Vector3(0, 1.1f * Mathf.Sign(attackDir.y), 0);
             Destroy(anim, 0.74f);
             if (attackDir.y == 1)
             {
