@@ -21,7 +21,7 @@ public class SpikeCircle : ItemEffect
             float x = Mathf.Cos(radians);
             float y = Mathf.Sin(radians);
             Vector3 dir = new Vector3(x, y, 0) * distance;
-            FriendlyProjectile fp = Instantiate(spikePrefab, PlayerItemHolder.instance.triggerLocation + dir, Quaternion.identity).GetComponent<FriendlyProjectile>();
+            Projectile fp = Instantiate(spikePrefab, PlayerItemHolder.instance.triggerLocation + dir, Quaternion.identity).GetComponent<Projectile>();
             fp.SetDirection(dir);
         }
     }

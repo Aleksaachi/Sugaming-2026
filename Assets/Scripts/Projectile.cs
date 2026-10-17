@@ -30,6 +30,10 @@ public class Projectile : MonoBehaviour
                 Vector2 oppositeDir = (transform.position - target.position).normalized;
                 rb.linearVelocity = oppositeDir * speed;
             }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
     void Update()
@@ -39,8 +43,6 @@ public class Projectile : MonoBehaviour
 
         if (currentDelay > 0)
             currentDelay -= Time.deltaTime;
-
-        else{}
 
         Vector2 directionToTarget = (target.position - transform.position).normalized;
         Vector2 currentDir  = rb.linearVelocity.normalized;
@@ -93,7 +95,6 @@ public class Projectile : MonoBehaviour
                 if (playerScript != null)
                 {
                     playerScript.takeDamage(damage);
-                    Debug.Log("Player hit by projectile!");
                 }
                 Destroy(gameObject);
             }
@@ -106,12 +107,13 @@ public class Projectile : MonoBehaviour
                 if (enemyScript != null)
                 {
                     enemyScript.takeDamage(damage);
-                    Debug.Log("Enemy hit by homing projectile!");
                 }
                 Destroy(gameObject);
             }
         }
-        else
+        else if (!other.CompareTag("Enemy") && !other.CompareTag("Player")){
+            Debug.Log(other.name);
             Destroy(gameObject);
+        }
     }
 }

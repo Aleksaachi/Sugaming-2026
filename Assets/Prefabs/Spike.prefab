@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8348963634051091842}
   - component: {fileID: 4033383851818638490}
   - component: {fileID: 5361148459835825613}
-  - component: {fileID: -311043494754562365}
-  m_Layer: 0
+  - component: {fileID: -4092490747202692160}
+  m_Layer: 6
   m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: d2fab68d2b5f6b94087944a6e43964b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -157,7 +157,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &-311043494754562365
+--- !u!114 &-4092490747202692160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,9 +166,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6510952006581585929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6a258989b01fe0418b6492cace7438e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0609ff314dbb8a54f9709b2d956ac7af, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::Projectile
   speed: 6.5
   damage: 1
   lifetime: 5
+  isHoming: 0
+  turnSpeed: 360
+  homingDelay: 0.1
+  isPlayerProjectile: 1
