@@ -5,7 +5,6 @@ using TMPro;
 public class PlayerItemHolder : MonoBehaviour
 {
     public int coinCounter = 0;
-    public TextMeshProUGUI coinBox;
     public static PlayerItemHolder instance;
     public List<Item> items = new ();
     void Awake()

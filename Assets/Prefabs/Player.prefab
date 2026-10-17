@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   coinCounter: 0
   coinBox: {fileID: 0}
+  items: []
 --- !u!61 &2320144360545121170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +148,7 @@ MonoBehaviour:
   chargeSpeed: 2
   attackSprite: {fileID: 0}
   attackVisDur: 0.1
-  invincibilityDuration: 5
+  invincibilityDuration: 0.5
   blinkInterval: 0.1
   spriteRenderer: {fileID: 8337976903869107927}
   healthBarFill: {fileID: 0}
@@ -169,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   coinCounter: 0
   coinBox: {fileID: 0}
+  items: []
 --- !u!1 &3047179649163892511
 GameObject:
   m_ObjectHideFlags: 0
