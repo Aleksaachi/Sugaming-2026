@@ -7,13 +7,15 @@ public class PlayerItemHolder : MonoBehaviour
     public int coinCounter = 0;
     public static PlayerItemHolder instance;
     public List<Item> items = new ();
+    public Vector3 triggerLocation;
     void Awake()
     {
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    public static void TriggerItems(Trigger trigger)
+    public static void TriggerItems(Trigger trigger, Vector3 newTriggerLocation)
     {
+        instance.triggerLocation = newTriggerLocation;
         // Highly inefficient and horrible but what can you do
         foreach (Item item in instance.items)
         {
@@ -35,7 +37,7 @@ public class PlayerItemHolder : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T)){
-            TriggerItems(Trigger.OnTest);
+            TriggerItems(Trigger.OnTest, transform.position);
         }
     }
 

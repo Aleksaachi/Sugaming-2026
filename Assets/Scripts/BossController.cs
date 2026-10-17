@@ -44,7 +44,7 @@ public class BossController : BaseEnemy
         directionTimer = changeDirectionTime;
     }
 
-    public override void takeDamage(int damage)
+    public override void takeDamage(float damage)
     {
         if (Time.time - lastBombSpawnTime >= bombSpawnCooldown)
         {

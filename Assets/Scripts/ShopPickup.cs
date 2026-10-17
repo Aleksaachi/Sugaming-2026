@@ -12,7 +12,7 @@ public class ShopPickup : MonoBehaviour
         && PlayerItemHolder.instance.coinCounter >= price
         && Input.GetKeyDown(KeyCode.E))
         {
-            PlayerItemHolder.TriggerItems(Trigger.OnPickup);
+            PlayerItemHolder.TriggerItems(Trigger.OnPickup, transform.position);
             PlayerItemHolder.instance.AddCoins(coins);
             PlayerController.instance.currentHP += health;
             PlayerController.instance.currentHP = Mathf.Clamp(PlayerController.instance.currentHP, 0, PlayerController.instance.maxHP);

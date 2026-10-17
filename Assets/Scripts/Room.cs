@@ -25,6 +25,7 @@ public class Room : MonoBehaviour
         if (!cleared && enemies.Count == 0)
         {
             Instantiate(rewards[Random.Range(0, rewards.Count)], pickupSpot.position, Quaternion.identity);
+            PlayerItemHolder.TriggerItems(Trigger.OnRoomClear, transform.position);
             cleared = true;
         }
         else if (cleared)

@@ -11,7 +11,7 @@ public class GridManager : MonoBehaviour
     }
     public static bool EmptyAt(Vector2 worldPosition)
     {
-        if (instance.map.GetTile(instance.map.WorldToCell(worldPosition)) == null)
+        if (instance != null && instance.map != null && instance.map.GetTile(instance.map.WorldToCell(worldPosition)) == null)
         {
             return true;
         }

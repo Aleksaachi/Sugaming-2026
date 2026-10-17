@@ -2049,18 +2049,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemFactory
       objectReference: {fileID: 0}
-    - target: {fileID: 5234847558071178222, guid: c49c05ab35b104e4282be99dfeba452b, type: 3}
-      propertyPath: allTriggers.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5234847558071178222, guid: c49c05ab35b104e4282be99dfeba452b, type: 3}
-      propertyPath: 'allTriggers.Array.data[0]'
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5234847558071178222, guid: c49c05ab35b104e4282be99dfeba452b, type: 3}
-      propertyPath: 'allTriggers.Array.data[1]'
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8986395906165163811, guid: c49c05ab35b104e4282be99dfeba452b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2204,7 +2192,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   map: {fileID: 428854310}
-  newTile: {fileID: 11400000, guid: e045519064e184c419f8ca3dec7cc46d, type: 2}
 --- !u!1001 &897061520
 PrefabInstance:
   m_ObjectHideFlags: 0

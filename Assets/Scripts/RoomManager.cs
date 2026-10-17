@@ -23,7 +23,7 @@ public class RoomManager : MonoBehaviour
     public void GoToNextRoom()
     {
         if (changingScenes) return;
-
+    
         string sceneToLoad;
         if (roomNumber == bossStage)
         {

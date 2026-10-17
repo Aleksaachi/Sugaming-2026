@@ -29,5 +29,6 @@ public enum Trigger
     OnDealDamage,
     OnKill,
     OnTest,
-    OnPickup
+    OnPickup,
+    OnRoomClear
 }

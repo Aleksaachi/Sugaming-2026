@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public int maxHP = 10;
     public int currentHP;
 
-    [SerializeField] private int baseDamage = 1;
+    [SerializeField] private float baseDamage = 1;
     [SerializeField] private float attackRange = 3f;
     [SerializeField] private float attackCooldown = 0.5f;
     [SerializeField] private float knockbackDist = 1f;
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
     {
         float damageMultiplier = 1f + (chargeTimer * chargeSpeed);
         damageMultiplier = Mathf.Clamp(damageMultiplier, 1f, maxChargeMultiplier);
-        int finalDamage = Mathf.RoundToInt(baseDamage * damageMultiplier);
+        float finalDamage = baseDamage * damageMultiplier;
 
         Vector2 attackDir = lastFacingDirection;
 
@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
 
         
     }
-    private IEnumerator HitEnemies(float waitTime, int finalDamage, Vector2 attackDir)
+    private IEnumerator HitEnemies(float waitTime, float finalDamage, Vector2 attackDir)
     {
         yield return new WaitForSeconds(waitTime);
 
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
                     enemyScript.ApplyKnockback(attackDir, knockbackDist * 10f);
                 }
             }
-        PlayerItemHolder.TriggerItems(Trigger.OnAttack);
+        PlayerItemHolder.TriggerItems(Trigger.OnAttack, transform.position);
     }
 
     private void ShowAttackVisual(Vector2 position, Vector2 direction)
@@ -184,7 +184,7 @@ public class PlayerController : MonoBehaviour
 
 
         squashAndStretch.Play();
-        PlayerItemHolder.TriggerItems(Trigger.OnTakeDamage);
+        PlayerItemHolder.TriggerItems(Trigger.OnTakeDamage, transform.position);
         currentHP -= damage;
         
         if (hitParticlesPrefab != null)
@@ -227,17 +227,17 @@ public class PlayerController : MonoBehaviour
                 break;
             
             case 1:
-                moveSpeed += 1f;
+                moveSpeed += 0.33f;
                 Debug.Log("Item Effect: Move Speed Upgraded!");
                 break;
             
             case 2:
-                baseDamage += 1;
+                baseDamage += 0.25f;
                 Debug.Log("Item Effect: Damage Upgraded!");
                 break;
             
             case 3:
-                attackRange += 0.5f;
+                attackRange += 0.1f;
                 Debug.Log("Item Effect: Attack Range Upgraded!");
                 break;
         }

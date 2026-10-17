@@ -32,7 +32,6 @@ public class Projectile : MonoBehaviour
             if (playerScript != null)
             {
                 playerScript.takeDamage(damage);
-                Debug.Log("Player hit by projectile!");
             }
             Destroy(gameObject);
         }

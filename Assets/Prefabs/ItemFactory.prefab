@@ -81,7 +81,8 @@ MonoBehaviour:
   - A#H$9jDS)(*
   - GNFD)Y*S
   - SADDSAGDFGDBFVsd(!!!!!
-  allTriggers: 05000000
+  allTriggers: 010000000200000003000000040000000600000007000000
   allEffects:
   - {fileID: 11400000, guid: 50e94d70e520c81479843eb938f02c41, type: 2}
   - {fileID: 11400000, guid: c3c4408091552d944a8bacfe8f289be8, type: 2}
+  - {fileID: 11400000, guid: d8446db71c07d484aa7ea5c602211787, type: 2}

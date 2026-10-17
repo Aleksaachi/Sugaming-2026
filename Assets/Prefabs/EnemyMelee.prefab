@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28abb736db1274346a8046ba2f8afeb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  maxHP: 3
+  maxHP: 7
   hitParticlesPrefab: {fileID: 2258977375873273251, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
   squashAndStretch: {fileID: -1612948097597461213}
   moveSpeed: 2.5

@@ -3,7 +3,7 @@ using UnityEngine;
 public class BaseEnemy : MonoBehaviour
 {
     [SerializeField] protected int maxHP = 3;
-    protected int currentHP;
+    protected float currentHP;
     protected float knockbackTimer = 0f;
     [SerializeField] protected GameObject hitParticlesPrefab;
 
@@ -21,10 +21,10 @@ public class BaseEnemy : MonoBehaviour
             player = playerObj.transform;
     }
 
-    public virtual void takeDamage(int damage)
+    public virtual void takeDamage(float damage)
     {
         squashAndStretch.Play();
-        PlayerItemHolder.TriggerItems(Trigger.OnDealDamage);
+        PlayerItemHolder.TriggerItems(Trigger.OnDealDamage, transform.position);
         currentHP -= damage;
 
         if (hitParticlesPrefab != null)
@@ -46,7 +46,7 @@ public class BaseEnemy : MonoBehaviour
         if (Room.currentRoom != null && Room.currentRoom.enemies != null)
             Room.currentRoom.enemies.Remove(gameObject);
             
-        PlayerItemHolder.TriggerItems(Trigger.OnKill);
+        PlayerItemHolder.TriggerItems(Trigger.OnKill, transform.position);
         Destroy(gameObject);
     }
 }

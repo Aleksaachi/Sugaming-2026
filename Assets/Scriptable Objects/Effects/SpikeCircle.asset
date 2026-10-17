@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f056eb163289a6849a468945e5d8ece2, type: 3}
+  m_Name: SpikeCircle
+  m_EditorClassIdentifier: Assembly-CSharp::SpikeCircle
+  amountRange: {x: 3, y: 9}
+  distance: 1
+  spikePrefab: {fileID: 6510952006581585929, guid: 0bb0c24bb9a6adc4f9ecc1030035e748, type: 3}

@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   coinCounter: 0
   items: []
+  triggerLocation: {x: 0, y: 0, z: 0}
 --- !u!61 &2320144360545121170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -138,9 +139,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
-  maxHP: 3
-  currentHP: 0
-  baseDamage: 1
+  maxHP: 30
+  currentHP: 30
+  baseDamage: 2
   attackRange: 3
   attackCooldown: 0.5
   knockbackDist: 1
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   coinCounter: 0
   items: []
+  triggerLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &2351502677372733778
 MonoBehaviour:
   m_ObjectHideFlags: 0

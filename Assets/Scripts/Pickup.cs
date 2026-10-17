@@ -9,7 +9,7 @@ public class Pickup : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, PlayerItemHolder.instance.transform.position) <= pickupRange)
         {
-            PlayerItemHolder.TriggerItems(Trigger.OnPickup);
+            PlayerItemHolder.TriggerItems(Trigger.OnPickup, transform.position);
             PlayerItemHolder.instance.AddCoins(coins);
             PlayerController.instance.currentHP += health;
             PlayerController.instance.currentHP = Mathf.Clamp(PlayerController.instance.currentHP, 0, PlayerController.instance.maxHP);
