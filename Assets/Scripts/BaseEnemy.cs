@@ -24,7 +24,6 @@ public class BaseEnemy : MonoBehaviour
     public virtual void takeDamage(float damage)
     {
         squashAndStretch.Play();
-        PlayerItemHolder.TriggerItems(Trigger.OnDealDamage, transform.position);
         currentHP -= damage;
 
         if (hitParticlesPrefab != null)

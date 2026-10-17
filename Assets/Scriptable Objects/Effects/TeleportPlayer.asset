@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: TeleportPlayer
   m_EditorClassIdentifier: Assembly-CSharp::TeleportPlayer
   tileRange: 2
+  teleportParticles: {fileID: 2258977375873273251, guid: 87d099c600ff9f44a8a03d10b737014e, type: 3}
