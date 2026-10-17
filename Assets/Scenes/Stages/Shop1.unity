@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 164162212}
   - component: {fileID: 164162211}
   - component: {fileID: 164162210}
+  - component: {fileID: 164162213}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -203,6 +204,19 @@ Transform:
   - {fileID: 1923388697}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &164162213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164162209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9aa9ebe5bfc83f40902276a0ef027c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridManager
+  map: {fileID: 1923388699}
 --- !u!1001 &658136535
 PrefabInstance:
   m_ObjectHideFlags: 0

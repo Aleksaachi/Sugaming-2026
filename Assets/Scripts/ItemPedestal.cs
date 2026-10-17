@@ -31,6 +31,7 @@ public class ItemPedestal : MonoBehaviour
         &&Input.GetKeyDown(KeyCode.E) 
         && Vector3.Distance(transform.position, PlayerItemHolder.instance.transform.position) <= pickupRange)
         {
+            ItemBar.instance.UpdateName(item.itemName);
             taken = true;
             itemDisplay.sprite = null;
             PlayerItemHolder.AddItem(item);

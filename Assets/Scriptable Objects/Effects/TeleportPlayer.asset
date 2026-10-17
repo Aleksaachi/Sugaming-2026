@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc7d44517c5725469bc5f3382413833, type: 3}
   m_Name: TeleportPlayer
   m_EditorClassIdentifier: Assembly-CSharp::TeleportPlayer
-  teleportRange: {x: 0.3, y: 3}
+  tileRange: 2

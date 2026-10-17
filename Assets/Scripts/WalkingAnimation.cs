@@ -27,7 +27,6 @@ public class WalkingAnimation : MonoBehaviour
             angle += angleChangeAtMaxWobble * wobbleStrenght * wobbleDir * Time.deltaTime;
             if (wobbleStrenght != 0 && !walkPart.isEmitting)
             {
-                Debug.Log("play");
                 walkPart.Play();
             }
             else if (wobbleStrenght == 0)

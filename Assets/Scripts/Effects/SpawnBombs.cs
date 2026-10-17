@@ -15,9 +15,10 @@ public class SpawnBombs : ItemEffect
     {
         for (int i = 0; i < bombsPerTrigger; i++)
         {
-            float x = Random.Range(-5, 5);
-            float y = Random.Range(-5, 5);
-            Instantiate(bombPrefab, new Vector3(x, y, 0), Quaternion.identity);
+            float x = Random.Range(-5, 5) + 0.5f;
+            float y = Random.Range(-5, 5) + 0.5f;
+            if (GridManager.EmptyAt(new Vector2(x, y))) Instantiate(bombPrefab, new Vector3(x, y, 0), Quaternion.identity);
+            else i--;
         }
     }
 }
