@@ -51,6 +51,10 @@ MonoBehaviour:
   - {fileID: -7573354855677281409, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
   - {fileID: 1801263428120863714, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
   - {fileID: -5971942374765049077, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
+  - {fileID: 4639506938558671751, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
+  - {fileID: -6099050445329199328, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
+  - {fileID: -7855203551248514480, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
+  - {fileID: -2064859774160998932, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
   itemNames:
   - Thingamabob
   - Thingy
