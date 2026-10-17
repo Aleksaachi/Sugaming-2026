@@ -684,6 +684,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2043666127428739021, guid: f419cabe5eb88f14ea3aa6c8c4fa73d7, type: 3}
+      propertyPath: hitParticlesPrefab
+      value: 
+      objectReference: {fileID: 2258977375873273251, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
     - target: {fileID: 5763578091017295593, guid: f419cabe5eb88f14ea3aa6c8c4fa73d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.48619
@@ -744,6 +748,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1001 &1149565532121310397
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2258977375873273251, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+      propertyPath: m_Name
+      value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852463607227877227, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.90393
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852463607227877227, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.06987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852463607227877227, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852463607227877227, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852463607227877227, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852463607227877227, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852463607227877227, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852463607227877227, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852463607227877227, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852463607227877227, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
 --- !u!1001 &2740027813018994124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -857,6 +918,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4624127908057811586, guid: 35c2628b8bc7fc24f99cf791131adff3, type: 3}
+      propertyPath: hitParticlesPrefab
+      value: 
+      objectReference: {fileID: 2258977375873273251, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1011,6 +1076,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7602272800199032167, guid: d6f7e8adbdd69364a88f77972c9d4e67, type: 3}
+      propertyPath: hitParticlesPrefab
+      value: 
+      objectReference: {fileID: 2258977375873273251, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1030,3 +1099,4 @@ SceneRoots:
   - {fileID: 3944181355978931510}
   - {fileID: 85348492}
   - {fileID: 1250172753}
+  - {fileID: 1149565532121310397}

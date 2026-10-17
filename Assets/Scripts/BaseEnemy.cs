@@ -5,6 +5,7 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField] protected int maxHP = 3;
     protected int currentHP;
     protected float knockbackTimer = 0f;
+    [SerializeField] protected GameObject hitParticlesPrefab;
 
     protected Rigidbody2D rb;
     protected Transform player;
@@ -23,7 +24,13 @@ public class BaseEnemy : MonoBehaviour
     {
         PlayerItemHolder.TriggerItems(Trigger.OnDealDamage);
         currentHP -= damage;
-        
+
+        if (hitParticlesPrefab != null)
+        {
+            GameObject particles = Instantiate(hitParticlesPrefab, transform.position, Quaternion.identity);
+            Destroy(particles, 1.5f);
+        }
+
         if (currentHP <= 0)
             Die();
     }
