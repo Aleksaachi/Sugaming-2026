@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
 
     public bool isHoming = false;
     [SerializeField] private float turnSpeed = 360f;
-    [SerializeField] private float homingDelay = 0.3f;
+    [SerializeField] private float homingDelay = 0.1f;
     private float currentDelay;
     public bool isPlayerProjectile = false;
 
@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currentDelay = homingDelay;
-        
+
         Destroy(gameObject, lifetime);
 
         if (isHoming)

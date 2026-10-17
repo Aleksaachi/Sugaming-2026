@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9befe123fc60e42b4497da9279531f, type: 3}
   m_Name: HomingProjEffect
   m_EditorClassIdentifier: Assembly-CSharp::HomingProjEffect
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 6510952006581585929, guid: e5555f6cf5acb0e47bb48282fb591a7f, type: 3}
