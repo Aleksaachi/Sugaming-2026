@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d104cd51627af74c9a8cdc4c4249467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  coinCounter: 0
+  coinBox: {fileID: 0}
 --- !u!61 &2320144360545121170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -135,7 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
-  maxHP: 10
+  maxHP: 30
+  currentHP: 0
   baseDamage: 1
   attackRange: 3
   attackCooldown: 0.5
@@ -160,6 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d104cd51627af74c9a8cdc4c4249467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  coinCounter: 0
+  coinBox: {fileID: 0}
 --- !u!1 &3047179649163892511
 GameObject:
   m_ObjectHideFlags: 0

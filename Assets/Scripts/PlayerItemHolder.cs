@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerItemHolder : MonoBehaviour
 {
+    public int coinCounter = 0;
+    public TextMeshProUGUI coinBox;
     public static PlayerItemHolder instance;
     List<Item> items = new ();
     void Awake()
@@ -32,5 +35,11 @@ public class PlayerItemHolder : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T)){
             TriggerItems(Trigger.OnTest);
         }
+    }
+
+    public void AddCoins(int amount)
+    {
+        coinCounter += amount;
+        CoinCounter.instance.UpdateCoins(coinCounter);
     }
 }

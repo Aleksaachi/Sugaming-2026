@@ -4,9 +4,10 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private int maxHP = 10;
-    private int currentHP;
+    [SerializeField] public int maxHP = 10;
+    public int currentHP;
 
     [SerializeField] private int baseDamage = 1;
     [SerializeField] private float attackRange = 3f;
@@ -30,6 +31,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 lastFacingDirection = Vector2.down;
     public GameObject animAttackSide;
     public GameObject animAttackDown;
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -163,7 +168,7 @@ public class PlayerController : MonoBehaviour
             Die();
         
     }
-    private void UpdateHealthUI()
+    public void UpdateHealthUI()
     {
         if (healthBarFill != null)
             healthBarFill.fillAmount = GetHealthPercentage();

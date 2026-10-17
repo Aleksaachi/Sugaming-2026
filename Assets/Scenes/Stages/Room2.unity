@@ -2383,6 +2383,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2.89
       objectReference: {fileID: 0}
+    - target: {fileID: 5677753403815201056, guid: 21e554f8c9129ee4ab7c7053fd81652d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677753403815201056, guid: 21e554f8c9129ee4ab7c7053fd81652d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.45
+      objectReference: {fileID: 0}
     - target: {fileID: 5808835518985168688, guid: 21e554f8c9129ee4ab7c7053fd81652d, type: 3}
       propertyPath: m_Name
       value: Room
