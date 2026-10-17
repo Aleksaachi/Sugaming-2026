@@ -200,3 +200,8 @@ MonoBehaviour:
   knockbackDist: 1
   maxChargeMultiplier: 3
   chargeSpeed: 2
+  attackSprite: {fileID: 0}
+  attackVisDur: 0.1
+  healthBarFill: {fileID: 0}
+  animAttackSide: {fileID: 2503603840339541897, guid: 5174924adb9c19449ab838c696673462, type: 3}
+  animAttackDown: {fileID: 4514465601809660724, guid: fb737c28cad68e648ad9b7e1b167aa9c, type: 3}

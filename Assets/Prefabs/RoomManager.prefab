@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0631556bb3a4f444cad97b03ea4e4e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  combatRooms: []
-  itemRooms: []
-  itemRoomRange: {x: 0, y: 0}
+  combatRooms:
+  - Room1
+  - Room2
+  itemRooms:
+  - Item1
+  bossRooms:
+  - Boss1
+  itemRoomRange: {x: 2, y: 3}
+  bossStage: 10
+  changingScenes: 0

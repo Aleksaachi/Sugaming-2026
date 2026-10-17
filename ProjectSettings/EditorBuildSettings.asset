@@ -9,13 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Stages/Item1.unity
-    guid: 7accae96e40a72d4585cddc39ac82b05
-  - enabled: 1
     path: Assets/Scenes/Stages/Room1.unity
     guid: 7e5b949491a8b7d42b7084544b3e470a
   - enabled: 1
     path: Assets/Scenes/Stages/Room2.unity
     guid: c04cd01f2de464444b432c1e106895e2
+  - enabled: 1
+    path: Assets/Scenes/Stages/Item1.unity
+    guid: 7accae96e40a72d4585cddc39ac82b05
+  - enabled: 1
+    path: Assets/Scenes/Stages/Boss1.unity
+    guid: acb2e9301056ab748b5820f20d4355a1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
