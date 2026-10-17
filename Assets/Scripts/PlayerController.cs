@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float invincibilityDuration = 1f;
     [SerializeField] private float blinkInterval = 0.1f;
     private float invincibilityTimer = 0f;
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private Image healthBarFill;
     [SerializeField] private GameObject healthBar;
@@ -39,7 +39,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null) 
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         currentHP = maxHP;
         UpdateHealthUI();
