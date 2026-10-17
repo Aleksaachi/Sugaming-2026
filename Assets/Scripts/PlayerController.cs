@@ -73,6 +73,10 @@ public class PlayerController : MonoBehaviour
                 EnemyController enemyScript = enemy.GetComponent<EnemyController>();
                 if (enemyScript != null)
                     enemyScript.takeDamage(finalDamage);
+
+                RangedEnemyController rangedScript = enemy.GetComponent<RangedEnemyController>();
+                if (rangedScript != null)
+                    rangedScript.takeDamage(finalDamage);
             }
     }
 
