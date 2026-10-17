@@ -147,6 +147,9 @@ MonoBehaviour:
   chargeSpeed: 2
   attackSprite: {fileID: 0}
   attackVisDur: 0.1
+  invincibilityDuration: 5
+  blinkInterval: 0.1
+  spriteRenderer: {fileID: 8337976903869107927}
   healthBarFill: {fileID: 0}
   healthBar: {fileID: 0}
   animAttackSide: {fileID: 2503603840339541897, guid: 5174924adb9c19449ab838c696673462, type: 3}

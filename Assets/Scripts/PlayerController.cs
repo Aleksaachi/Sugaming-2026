@@ -24,6 +24,12 @@ public class PlayerController : MonoBehaviour
     private float chargeTimer = 0f;
     private bool isCharging = false;
 
+    private float knockbackTimer = 0f;
+    [SerializeField] private float invincibilityDuration = 1f;
+    [SerializeField] private float blinkInterval = 0.1f;
+    private float invincibilityTimer = 0f;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
     [SerializeField] private Image healthBarFill;
     [SerializeField] private GameObject healthBar;
     private Rigidbody2D rb;
@@ -38,6 +44,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (spriteRenderer == null) 
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
         currentHP = maxHP;
         UpdateHealthUI();
 
@@ -68,10 +77,25 @@ public class PlayerController : MonoBehaviour
             lastAttackTime = Time.time;
             Attack();
         }
+        if (invincibilityTimer > 0)
+        {
+            invincibilityTimer -= Time.deltaTime;
+            spriteRenderer.enabled = Mathf.FloorToInt(invincibilityTimer / blinkInterval) % 2 == 0;
+        }
+        else 
+            spriteRenderer.enabled = true;
     }
     void FixedUpdate()
     {
-        rb.linearVelocity = moveInput * moveSpeed;
+        if (knockbackTimer > 0)
+            knockbackTimer -= Time.fixedDeltaTime;
+        else
+            rb.linearVelocity = moveInput.normalized * moveSpeed;
+    }
+    public void ApplyKnockback(Vector2 direction, float force, float duration = 0.15f)
+    {
+        rb.linearVelocity = direction.normalized * force;
+        knockbackTimer = duration;
     }
     private void Attack()
     {
@@ -120,19 +144,12 @@ public class PlayerController : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
             if (enemy.CompareTag("Enemy"))
             {
-                enemy.transform.position += (Vector3)(attackDir.normalized * knockbackDist);
-
-                EnemyController enemyScript = enemy.GetComponent<EnemyController>();
+                BaseEnemy enemyScript = enemy.GetComponent<BaseEnemy>();
                 if (enemyScript != null)
+                {
                     enemyScript.takeDamage(finalDamage);
-
-                RangedEnemyController rangedScript = enemy.GetComponent<RangedEnemyController>();
-                if (rangedScript != null)
-                    rangedScript.takeDamage(finalDamage);
-                
-                BossController bossScript = enemy.GetComponent<BossController>();
-                if (bossScript != null)
-                    bossScript.takeDamage(finalDamage);
+                    enemyScript.ApplyKnockback(attackDir, knockbackDist * 10f);
+                }
             }
         PlayerItemHolder.TriggerItems(Trigger.OnAttack);
     }
@@ -159,6 +176,9 @@ public class PlayerController : MonoBehaviour
     }
     public void takeDamage(int damage)
     {
+        if (invincibilityTimer > 0)
+            return;
+
         PlayerItemHolder.TriggerItems(Trigger.OnTakeDamage);
         currentHP -= damage;
         
@@ -166,7 +186,8 @@ public class PlayerController : MonoBehaviour
 
         if (currentHP <= 0)
             Die();
-        
+        else
+            invincibilityTimer = invincibilityDuration;
     }
     public void UpdateHealthUI()
     {
