@@ -30,6 +30,5 @@ public class EnemyController : BaseEnemy
                 if (playerScript != null)
                     playerScript.takeDamage(damage);
             }
-
     }
 }
