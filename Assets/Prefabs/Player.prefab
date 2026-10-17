@@ -199,3 +199,4 @@ MonoBehaviour:
   attackCooldown: 0.5
   maxChargeMultiplier: 3
   chargeSpeed: 2
+  animAttackSide: {fileID: 2503603840339541897, guid: 5174924adb9c19449ab838c696673462, type: 3}

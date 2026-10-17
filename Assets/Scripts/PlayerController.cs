@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Vector2 lastFacingDirection = Vector2.down;
+    public GameObject animAttackSide;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -62,7 +63,14 @@ public class PlayerController : MonoBehaviour
         int finalDamage = Mathf.RoundToInt(baseDamage * damageMultiplier);
 
         Vector2 attackDir = lastFacingDirection;
-
+        if (attackDir.y == 0)
+        {
+            GameObject anim = Instantiate(animAttackSide, transform.position, Quaternion.identity);
+            anim.transform.SetParent(transform);
+            anim.transform.localScale = new Vector3(attackDir.x, 1, 1);
+            anim.transform.localPosition = new Vector3(attackDir.x*1.2f, 0.5f, 0);
+            Destroy(anim, 0.74f);
+        }
         Vector2 hitCenter = (Vector2)transform.position + (attackDir * (attackRange / 2f));
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(hitCenter, attackRange / 2f);
