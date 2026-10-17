@@ -8,11 +8,13 @@ public class RoomManager : MonoBehaviour
     public List<string> combatRooms;
     public List<string> itemRooms;
     public List<string> bossRooms;
+    public List<string> shopRooms;
     public Vector2Int itemRoomRange;
     public int bossStage;
     public bool changingScenes;
     int counter = 0;
     int roomNumber = 0;
+    int shopCounter = -1;
     void Awake()
     {
         instance = this;
@@ -26,6 +28,9 @@ public class RoomManager : MonoBehaviour
         if (roomNumber == bossStage)
         {
             sceneToLoad = bossRooms[Random.Range(0, bossRooms.Count)];
+        }else if (shopCounter == 0)
+        {
+            sceneToLoad = shopRooms[Random.Range(0, shopRooms.Count)];
         }
         else{
             if (counter >= itemRoomRange.x)
@@ -35,6 +40,7 @@ public class RoomManager : MonoBehaviour
                 {
                     sceneToLoad = itemRooms[Random.Range(0, itemRooms.Count)];
                     counter = 0;
+                    shopCounter = 2;
                 }
                 else
                 {
@@ -49,6 +55,7 @@ public class RoomManager : MonoBehaviour
             }
         }
         roomNumber++;
+        shopCounter--;
         changingScenes = true;
         SceneManager.LoadSceneAsync(sceneToLoad);
     }
