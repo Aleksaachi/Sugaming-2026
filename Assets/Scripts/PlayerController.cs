@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 lastFacingDirection = Vector2.down;
     public GameObject animAttackSide;
+    public GameObject animAttackDown;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -66,14 +68,37 @@ public class PlayerController : MonoBehaviour
         int finalDamage = Mathf.RoundToInt(baseDamage * damageMultiplier);
 
         Vector2 attackDir = lastFacingDirection;
+
+        GameObject anim;
         if (attackDir.y == 0)
         {
-            GameObject anim = Instantiate(animAttackSide, transform.position, Quaternion.identity);
+            anim = Instantiate(animAttackSide, transform.position, Quaternion.identity);
             anim.transform.SetParent(transform);
             anim.transform.localScale = new Vector3(attackDir.x, 1, 1);
             anim.transform.localPosition = new Vector3(attackDir.x*1.2f, 0.5f, 0);
             Destroy(anim, 0.74f);
         }
+        else
+        {
+            anim = Instantiate(animAttackDown, transform.position, Quaternion.identity);
+            anim.transform.SetParent(transform);
+            anim.transform.localScale = new Vector3(1, -attackDir.y, 1);
+            anim.transform.localPosition = new Vector3(0, 1.1f * attackDir.y, 0);
+            Destroy(anim, 0.74f);
+            if (attackDir.y == 1)
+            {
+                anim.GetComponent<SpriteRenderer>().sortingOrder = 2;
+            }
+        }
+        
+        StartCoroutine(HitEnemies(0.5f, finalDamage, attackDir));
+
+        
+    }
+    private IEnumerator HitEnemies(float waitTime, int finalDamage, Vector2 attackDir)
+    {
+        yield return new WaitForSeconds(waitTime);
+
         Vector2 hitCenter = (Vector2)transform.position + (attackDir * (attackRange / 2f));
 
         ShowAttackVisual(hitCenter, attackDir);
