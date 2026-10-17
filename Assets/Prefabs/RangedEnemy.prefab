@@ -132,7 +132,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.96}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -179,8 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166728b787e68d54993e0b1979772455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyController
-  moveSpeed: 1.5
   maxHP: 2
+  hitParticlesPrefab: {fileID: 2258977375873273251, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+  moveSpeed: 1.5
   attackRange: 6
   attackCooldown: 1.5
   projectilePrefab: {fileID: 6510952006581585929, guid: e5555f6cf5acb0e47bb48282fb591a7f, type: 3}

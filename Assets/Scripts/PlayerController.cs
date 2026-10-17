@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Image healthBarFill;
     [SerializeField] private GameObject healthBar;
+    [SerializeField] private GameObject hitParticlesPrefab;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Vector2 lastFacingDirection = Vector2.down;
@@ -182,6 +183,11 @@ public class PlayerController : MonoBehaviour
         PlayerItemHolder.TriggerItems(Trigger.OnTakeDamage);
         currentHP -= damage;
         
+        if (hitParticlesPrefab != null)
+        {
+            GameObject particles = Instantiate(hitParticlesPrefab, transform.position, Quaternion.identity);
+            Destroy(particles, 1.5f);
+        }
         UpdateHealthUI();
 
         if (currentHP <= 0)
