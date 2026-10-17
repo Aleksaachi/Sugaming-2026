@@ -83,7 +83,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 85e323974eb286442b4c12b7b0502f9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d104cd51627af74c9a8cdc4c4249467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  TEST_TRIGGER: 0
 --- !u!61 &2320144360545121170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -195,3 +194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxHP: 10
+  baseDamage: 1
+  attackRange: 3
+  attackCooldown: 0.5
+  maxChargeMultiplier: 3
+  chargeSpeed: 2

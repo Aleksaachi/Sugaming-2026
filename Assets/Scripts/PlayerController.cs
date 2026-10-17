@@ -74,10 +74,12 @@ public class PlayerController : MonoBehaviour
                 if (enemyScript != null)
                     enemyScript.takeDamage(finalDamage);
             }
+        PlayerItemHolder.TriggerItems(Trigger.OnAttack);
     }
 
     public void takeDamage(int damage)
     {
+        PlayerItemHolder.TriggerItems(Trigger.OnTakeDamage);
         currentHP -= damage;
         if (currentHP <= 0)
             Die();

@@ -3,16 +3,11 @@ using UnityEngine;
 
 public class PlayerItemHolder : MonoBehaviour
 {
-    public bool TEST_TRIGGER;
     public static PlayerItemHolder instance;
     List<Item> items = new ();
     void Awake()
     {
         instance = this;
-    }
-    void Start()
-    {
-        AddItem(ItemFactory.GetItem());
     }
     public static void TriggerItems(Trigger trigger)
     {
@@ -33,9 +28,8 @@ public class PlayerItemHolder : MonoBehaviour
     }
     void Update()
     {
-        if (TEST_TRIGGER){
+        if (Input.GetKeyDown(KeyCode.T)){
             TriggerItems(Trigger.OnTest);
-            TEST_TRIGGER = false;
         }
     }
 }

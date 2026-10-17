@@ -33,12 +33,14 @@ public class EnemyController : MonoBehaviour
     }
     public void takeDamage(int damage)
     {
+        PlayerItemHolder.TriggerItems(Trigger.OnDealDamage);
         currentHP -= damage;
         if(currentHP <= 0)
             Die();
     }
     public void Die()
     {
+        PlayerItemHolder.TriggerItems(Trigger.OnKill);
         Destroy(gameObject);
     }
     void OnCollisionEnter2D(Collision2D collision)
