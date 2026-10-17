@@ -150,6 +150,7 @@ public class PlayerController : MonoBehaviour
                 BaseEnemy enemyScript = enemy.GetComponent<BaseEnemy>();
                 if (enemyScript != null)
                 {
+                    PlayerItemHolder.TriggerItems(Trigger.OnDealDamage, enemyScript.transform.position);
                     enemyScript.takeDamage(finalDamage);
                     enemyScript.ApplyKnockback(attackDir, knockbackDist * 10f);
                 }

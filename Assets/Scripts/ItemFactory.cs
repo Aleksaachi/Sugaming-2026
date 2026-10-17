@@ -22,7 +22,7 @@ public class ItemFactory : MonoBehaviour
         newItem.itemName = instance.itemNames[Random.Range(0, instance.itemNames.Count)];
         newItem.itemIcon = instance.itemSprites[Random.Range(0, instance.itemSprites.Count)];
         
-        int effectAmount = Random.Range(1, 2);
+        int effectAmount = Random.Range(1, 3);
         for (int i = 0; i < effectAmount; i++)
         {
             Trigger trigger = instance.allTriggers[Random.Range(0, instance.allTriggers.Count)];

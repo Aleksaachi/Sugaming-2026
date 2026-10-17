@@ -39,6 +39,9 @@ public class PlayerItemHolder : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T)){
             TriggerItems(Trigger.OnTest, transform.position);
         }
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            PlayerController.instance.Die();
+        }
     }
 
     public void AddCoins(int amount)

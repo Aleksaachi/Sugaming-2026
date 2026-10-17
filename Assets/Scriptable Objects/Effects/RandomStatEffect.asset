@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b5788572e4f374b9ef060d82b131ba, type: 3}
   m_Name: RandomStatEffect
   m_EditorClassIdentifier: Assembly-CSharp::RandomStatEffect
+  heartParticles: {fileID: 2258977375873273251, guid: 008967292df709c4fab2369179b8919b, type: 3}
