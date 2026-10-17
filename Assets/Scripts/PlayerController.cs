@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool isCharging = false;
 
     [SerializeField] private Image healthBarFill;
+    [SerializeField] private GameObject healthBar;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Vector2 lastFacingDirection = Vector2.down;
@@ -34,6 +35,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         currentHP = maxHP;
         UpdateHealthUI();
+
+        DontDestroyOnLoad(healthBar);
     }
 
     void Update()
