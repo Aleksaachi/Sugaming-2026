@@ -1,30 +1,14 @@
 using UnityEngine;
 
-public class RangedEnemyController : MonoBehaviour
+public class RangedEnemyController : BaseEnemy
 {
     [SerializeField] private float moveSpeed = 1.5f;
-    [SerializeField] private int maxHP = 2;
-    private int currentHP;
-
     [SerializeField] private float attackRange = 6f;
     [SerializeField] private float attackCooldown = 1.5f;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
 
     private float lastAttackTime;
-    private Rigidbody2D rb;
-    private Transform player;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        currentHP = maxHP;
-
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null)
-            player = playerObj.transform;
-    }
-
     void Update()
     {
         if (player == null)
@@ -41,6 +25,12 @@ public class RangedEnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (knockbackTimer > 0)
+        {
+            knockbackTimer -= Time.fixedDeltaTime;
+            return; 
+        }
+        
         if (player == null)
             return;
 
@@ -69,21 +59,5 @@ public class RangedEnemyController : MonoBehaviour
 
         if (projScript != null)
             projScript.SetDirection(directionToPlayer);
-    }
-
-    public void takeDamage(int damage)
-    {
-        PlayerItemHolder.TriggerItems(Trigger.OnDealDamage);
-        currentHP -= damage;
-
-        if (currentHP <= 0)
-            Die();
-    }
-
-    private void Die()
-    {
-        Room.currentRoom.enemies.Remove(gameObject);
-        PlayerItemHolder.TriggerItems(Trigger.OnKill);
-        Destroy(gameObject);
     }
 }

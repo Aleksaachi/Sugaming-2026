@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class BossController : MonoBehaviour
+public class BossController : BaseEnemy
 {
-    [SerializeField] private int maxHP = 50;
-    private int currentHP;
-
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float changeDirectionTime = 1.5f;
     private Vector2 currentDirection;
@@ -17,18 +14,9 @@ public class BossController : MonoBehaviour
     [SerializeField] private float bombSpawnCooldown = 1f;
     private float lastBombSpawnTime;
 
-    private Rigidbody2D rb;
-    private Transform player;
-
-    void Start()
+    protected override void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        currentHP = maxHP;
-
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null) 
-            player = playerObj.transform;
-
+        base.Start();
         PickRandomDirection();
     }
 
@@ -41,6 +29,11 @@ public class BossController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (knockbackTimer > 0)
+        {
+            knockbackTimer -= Time.fixedDeltaTime;
+            return; 
+        }
         rb.linearVelocity = currentDirection * moveSpeed;
     }
 
@@ -51,26 +44,16 @@ public class BossController : MonoBehaviour
         directionTimer = changeDirectionTime;
     }
 
-    public void takeDamage(int damage)
+    public override void takeDamage(int damage)
     {
-        currentHP -= damage;
-
         if (Time.time - lastBombSpawnTime >= bombSpawnCooldown)
         {
             lastBombSpawnTime = Time.time;
             SpawnBombs();
         }
 
-        if (currentHP <= 0)
-            Die();
+        base.takeDamage(damage);
     }
-    private void Die()
-    {
-        Room.currentRoom.enemies.Remove(gameObject);
-        PlayerItemHolder.TriggerItems(Trigger.OnKill);
-        Destroy(gameObject);
-    }
-
     private void SpawnBombs()
     {
         if (bombPrefab == null) 
