@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
         PlayerItemHolder.TriggerItems(Trigger.OnKill);
         Destroy(gameObject);
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
             if(Time.time - lastAttackTime >= attackCooldown)

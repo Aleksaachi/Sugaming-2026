@@ -62,7 +62,13 @@ public class BossController : MonoBehaviour
         }
 
         if (currentHP <= 0)
-            Destroy(gameObject);
+            Die();
+    }
+    private void Die()
+    {
+        Room.currentRoom.enemies.Remove(gameObject);
+        PlayerItemHolder.TriggerItems(Trigger.OnKill);
+        Destroy(gameObject);
     }
 
     private void SpawnBombs()
