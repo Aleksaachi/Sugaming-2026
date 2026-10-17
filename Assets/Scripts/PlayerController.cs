@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxChargeMultiplier = 3f;
     [SerializeField] private float chargeSpeed = 2f;
 
+    [SerializeField] private Sprite attackSprite;
+    [SerializeField] private float attackVisDur = 0.1f;
+
     private float lastAttackTime;
     private float chargeTimer = 0f;
     private bool isCharging = false;
@@ -40,7 +43,7 @@ public class PlayerController : MonoBehaviour
             isCharging = true;
             chargeTimer = 0f;
         }
-        if (Input.GetMouseButtonDown(0) && isCharging)
+        if (Input.GetMouseButton(0) && isCharging)
         {
             chargeTimer += Time.deltaTime;
             chargeTimer = Mathf.Clamp(chargeTimer, 0f, maxChargeMultiplier / chargeSpeed);
@@ -73,6 +76,8 @@ public class PlayerController : MonoBehaviour
         }
         Vector2 hitCenter = (Vector2)transform.position + (attackDir * (attackRange / 2f));
 
+        ShowAttackVisual(hitCenter, attackDir);
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(hitCenter, attackRange / 2f);
 
         foreach (Collider2D enemy in hitEnemies)
@@ -85,10 +90,34 @@ public class PlayerController : MonoBehaviour
                 RangedEnemyController rangedScript = enemy.GetComponent<RangedEnemyController>();
                 if (rangedScript != null)
                     rangedScript.takeDamage(finalDamage);
+                
+                BossController bossScript = enemy.GetComponent<BossController>();
+                if (bossScript != null)
+                    bossScript.takeDamage(finalDamage);
             }
         PlayerItemHolder.TriggerItems(Trigger.OnAttack);
     }
 
+    private void ShowAttackVisual(Vector2 position, Vector2 direction)
+    {
+        if (attackSprite == null)
+            return;
+
+        GameObject visualObj = new GameObject("AttackVisual");
+        visualObj.transform.position = position;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        visualObj.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        SpriteRenderer sr = visualObj.AddComponent<SpriteRenderer>();
+        sr.sprite = attackSprite;
+
+        sr.sortingOrder = 10;
+
+        visualObj.transform.localScale = new Vector3(attackRange, attackRange, 1f);
+
+        Destroy(visualObj, attackVisDur);
+    }
     public void takeDamage(int damage)
     {
         PlayerItemHolder.TriggerItems(Trigger.OnTakeDamage);
