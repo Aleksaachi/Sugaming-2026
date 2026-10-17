@@ -47,12 +47,18 @@ MonoBehaviour:
   combatRooms:
   - Room1
   - Room2
+  - Room3
+  - Room4
+  - Room5
   itemRooms:
   - Item1
+  - Item2
+  - Item3
   bossRooms:
   - Boss1
   shopRooms:
   - Shop1
+  - Shop2
   itemRoomRange: {x: 2, y: 3}
   bossStage: 10
   changingScenes: 0

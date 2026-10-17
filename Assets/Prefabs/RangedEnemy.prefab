@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6013458205313135865}
   - component: {fileID: 6247763475655306520}
   - component: {fileID: 2043666127428739021}
+  - component: {fileID: 4188070016092583621}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -122,11 +123,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyController
   maxHP: 2
   hitParticlesPrefab: {fileID: 2258977375873273251, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
+  squashAndStretch: {fileID: 4188070016092583621}
   moveSpeed: 1.5
   attackRange: 6
   attackCooldown: 1.5
   projectilePrefab: {fileID: 6510952006581585929, guid: e5555f6cf5acb0e47bb48282fb591a7f, type: 3}
   firePoint: {fileID: 0}
+--- !u!114 &4188070016092583621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754260719872752513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f8d1cf618155b489f069e8931775f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SquashAndStretch
+  animationTime: 0.1
+  timer: 0
+  strenght: 0.1
+  half: 0
+  xScale: 0
+  yScale: 0
+  baseScale: {x: 0, y: 0, z: 0}
 --- !u!1 &8926778559996438659
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 lastFacingDirection = Vector2.down;
     public GameObject animAttackSide;
     public GameObject animAttackDown;
+    public SquashAndStretch squashAndStretch;
     void Awake()
     {
         instance = this;
@@ -91,7 +93,7 @@ public class PlayerController : MonoBehaviour
         if (knockbackTimer > 0)
             knockbackTimer -= Time.fixedDeltaTime;
         else
-            rb.linearVelocity = moveInput.normalized * moveSpeed;
+            rb.linearVelocity = moveInput * moveSpeed;
     }
     public void ApplyKnockback(Vector2 direction, float force, float duration = 0.15f)
     {
@@ -112,7 +114,7 @@ public class PlayerController : MonoBehaviour
             anim = Instantiate(animAttackSide, transform.position, Quaternion.identity);
             anim.transform.SetParent(transform);
             anim.transform.localScale = new Vector3(Mathf.Sign(attackDir.x), 1);
-            anim.transform.localPosition = new Vector3(Mathf.Sign(attackDir.x)*1.2f, 0.5f, 0);
+            anim.transform.localPosition = new Vector3(Mathf.Sign(attackDir.x)*1.15f, 0.5f, 0);
             Destroy(anim, 0.74f);
         }
         else
@@ -180,6 +182,8 @@ public class PlayerController : MonoBehaviour
         if (invincibilityTimer > 0)
             return;
 
+
+        squashAndStretch.Play();
         PlayerItemHolder.TriggerItems(Trigger.OnTakeDamage);
         currentHP -= damage;
         
@@ -202,7 +206,9 @@ public class PlayerController : MonoBehaviour
     }
     public void Die()
     {
-        ;
+        SceneManager.LoadScene("Loss");
+        Destroy(gameObject, 0.1f);
+        Destroy(healthBar, 0.1f);
     }
     public float GetHealthPercentage()
     {

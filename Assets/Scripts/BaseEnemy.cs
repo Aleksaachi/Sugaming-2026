@@ -9,6 +9,7 @@ public class BaseEnemy : MonoBehaviour
 
     protected Rigidbody2D rb;
     protected Transform player;
+    public SquashAndStretch squashAndStretch;
 
     protected virtual void Start()
     {
@@ -22,6 +23,7 @@ public class BaseEnemy : MonoBehaviour
 
     public virtual void takeDamage(int damage)
     {
+        squashAndStretch.Play();
         PlayerItemHolder.TriggerItems(Trigger.OnDealDamage);
         currentHP -= damage;
 

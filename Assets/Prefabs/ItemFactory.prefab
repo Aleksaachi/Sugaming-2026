@@ -55,6 +55,8 @@ MonoBehaviour:
   - {fileID: -6099050445329199328, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
   - {fileID: -7855203551248514480, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
   - {fileID: -2064859774160998932, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
+  - {fileID: 676042645, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
+  - {fileID: 798286519, guid: 2a7a86f21728dc349b974eff739857b5, type: 3}
   itemNames:
   - Thingamabob
   - Thingy
@@ -63,6 +65,22 @@ MonoBehaviour:
   - Whatsit
   - Doohickey
   - Doodad
+  - Universe destroyer
+  - Holy obliterator
+  - God himself
+  - Stick adjecent item
+  - Piece of chaos
+  - Soul of immortality
+  - Soul of sins
+  - The darkest dream
+  - Blip-blopper
+  - Mouse toy
+  - Dream browser
+  - Seed of hope
+  - Nothing
+  - A#H$9jDS)(*
+  - GNFD)Y*S
+  - SADDSAGDFGDBFVsd(!!!!!
   allTriggers: 05000000
   allEffects:
   - {fileID: 11400000, guid: 50e94d70e520c81479843eb938f02c41, type: 2}

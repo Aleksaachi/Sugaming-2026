@@ -10,6 +10,7 @@ public class ItemFactory : MonoBehaviour
     public List<ItemEffect> allEffects;
     void Awake()
     {
+        if (instance != null) Destroy(instance);
         instance = this;
         DontDestroyOnLoad(gameObject);
     }

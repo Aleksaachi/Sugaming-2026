@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 682338916584984565}
   - component: {fileID: 7432808134166534223}
   - component: {fileID: 4624127908057811586}
+  - component: {fileID: -1612948097597461213}
   m_Layer: 0
   m_Name: EnemyMelee
   m_TagString: Enemy
@@ -122,9 +123,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   maxHP: 3
   hitParticlesPrefab: {fileID: 2258977375873273251, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
-  moveSpeed: 3
-  damage: 1
+  squashAndStretch: {fileID: -1612948097597461213}
+  moveSpeed: 2.5
+  damage: 2
   attackCooldown: 1
+--- !u!114 &-1612948097597461213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906914692698915993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f8d1cf618155b489f069e8931775f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SquashAndStretch
+  animationTime: 0.1
+  timer: 0
+  strenght: 0.1
+  half: 0
+  xScale: 0
+  yScale: 0
+  baseScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1963898437613042346
 GameObject:
   m_ObjectHideFlags: 0

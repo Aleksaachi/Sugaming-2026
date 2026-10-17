@@ -1659,6 +1659,7 @@ GameObject:
   - component: {fileID: 1513715877}
   - component: {fileID: 1513715876}
   - component: {fileID: 1513715875}
+  - component: {fileID: 1513715878}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -1732,6 +1733,19 @@ Transform:
   - {fileID: 704222228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1513715878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513715874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9aa9ebe5bfc83f40902276a0ef027c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridManager
+  map: {fileID: 704222230}
 --- !u!1 &1529109373
 GameObject:
   m_ObjectHideFlags: 0
