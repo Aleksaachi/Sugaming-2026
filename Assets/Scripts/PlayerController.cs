@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int baseDamage = 1;
     [SerializeField] private float attackRange = 3f;
     [SerializeField] private float attackCooldown = 0.5f;
+    [SerializeField] private float knockbackDist = 1f;
 
     [SerializeField] private float maxChargeMultiplier = 3f;
     [SerializeField] private float chargeSpeed = 2f;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private float chargeTimer = 0f;
     private bool isCharging = false;
 
+    [SerializeField] private Image healthBarFill;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Vector2 lastFacingDirection = Vector2.down;
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currentHP = maxHP;
+        UpdateHealthUI();
     }
 
     void Update()
@@ -75,6 +78,8 @@ public class PlayerController : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
             if (enemy.CompareTag("Enemy"))
             {
+                enemy.transform.position += (Vector3)(attackDir.normalized * knockbackDist);
+
                 EnemyController enemyScript = enemy.GetComponent<EnemyController>();
                 if (enemyScript != null)
                     enemyScript.takeDamage(finalDamage);
@@ -114,13 +119,24 @@ public class PlayerController : MonoBehaviour
     {
         PlayerItemHolder.TriggerItems(Trigger.OnTakeDamage);
         currentHP -= damage;
+        
+        UpdateHealthUI();
+
         if (currentHP <= 0)
             Die();
         
+    }
+    private void UpdateHealthUI()
+    {
+        if (healthBarFill != null)
+            healthBarFill.fillAmount = GetHealthPercentage();
     }
     public void Die()
     {
         ;
     }
-
+    public float GetHealthPercentage()
+    {
+        return (float)currentHP/maxHP;
+    }
 }
