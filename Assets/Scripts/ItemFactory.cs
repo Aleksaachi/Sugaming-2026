@@ -11,6 +11,7 @@ public class ItemFactory : MonoBehaviour
     void Awake()
     {
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
     public static Item GetItem()
     {

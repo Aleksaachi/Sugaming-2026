@@ -40,6 +40,7 @@ public class EnemyController : MonoBehaviour
     }
     public void Die()
     {
+        Room.currentRoom.enemies.Remove(gameObject);
         PlayerItemHolder.TriggerItems(Trigger.OnKill);
         Destroy(gameObject);
     }

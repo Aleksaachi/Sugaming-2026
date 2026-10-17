@@ -73,6 +73,7 @@ public class RangedEnemyController : MonoBehaviour
 
     public void takeDamage(int damage)
     {
+        PlayerItemHolder.TriggerItems(Trigger.OnDealDamage);
         currentHP -= damage;
 
         if (currentHP <= 0)
@@ -81,6 +82,8 @@ public class RangedEnemyController : MonoBehaviour
 
     private void Die()
     {
+        Room.currentRoom.enemies.Remove(gameObject);
+        PlayerItemHolder.TriggerItems(Trigger.OnKill);
         Destroy(gameObject);
     }
 }
