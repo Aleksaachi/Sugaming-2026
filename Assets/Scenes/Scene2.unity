@@ -242,6 +242,7 @@ MonoBehaviour:
   allEffects:
   - {fileID: 11400000, guid: 50e94d70e520c81479843eb938f02c41, type: 2}
   - {fileID: 11400000, guid: c3c4408091552d944a8bacfe8f289be8, type: 2}
+  - {fileID: 11400000, guid: 72824572c1b60a945b537c8b1a8396a6, type: 2}
 --- !u!4 &326651395
 Transform:
   m_ObjectHideFlags: 0
