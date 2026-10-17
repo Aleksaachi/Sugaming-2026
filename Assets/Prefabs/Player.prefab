@@ -200,6 +200,3 @@ MonoBehaviour:
   knockbackDist: 1
   maxChargeMultiplier: 3
   chargeSpeed: 2
-  attackSprite: {fileID: -3218248262026354849, guid: 4e8ce5d80740f8a42945dcb007c1cb34, type: 3}
-  attackVisDur: 0.3
-  healthBarFill: {fileID: 0}
