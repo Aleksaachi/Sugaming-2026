@@ -214,4 +214,32 @@ public class PlayerController : MonoBehaviour
     {
         return (float)currentHP/maxHP;
     }
+    public void UpgradeRandomStat()
+    {
+        int randomStat = Random.Range(0, 4);
+        switch(randomStat)
+        {
+            case 0:
+                maxHP += 2;
+                currentHP += 2;
+                UpdateHealthUI();
+                Debug.Log("Item Effect: Max HP Upgraded!");
+                break;
+            
+            case 1:
+                moveSpeed += 1f;
+                Debug.Log("Item Effect: Move Speed Upgraded!");
+                break;
+            
+            case 2:
+                baseDamage += 1;
+                Debug.Log("Item Effect: Damage Upgraded!");
+                break;
+            
+            case 3:
+                attackRange += 0.5f;
+                Debug.Log("Item Effect: Attack Range Upgraded!");
+                break;
+        }
+    }
 }
