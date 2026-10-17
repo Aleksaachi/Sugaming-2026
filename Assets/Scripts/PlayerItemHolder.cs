@@ -5,9 +5,8 @@ using TMPro;
 public class PlayerItemHolder : MonoBehaviour
 {
     public int coinCounter = 0;
-    public TextMeshProUGUI coinBox;
     public static PlayerItemHolder instance;
-    List<Item> items = new ();
+    public List<Item> items = new ();
     void Awake()
     {
         instance = this;
@@ -28,7 +27,10 @@ public class PlayerItemHolder : MonoBehaviour
     public static void AddItem(Item itemToAdd)
     {
         instance.items.Add(itemToAdd);
-        Debug.Log("Item added");
+    }
+    public static void RemoveLastItem()
+    {
+        instance.items.RemoveAt(instance.items.Count-1);
     }
     void Update()
     {
