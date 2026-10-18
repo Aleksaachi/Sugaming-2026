@@ -124,6 +124,7 @@ MonoBehaviour:
   maxHP: 5
   hitParticlesPrefab: {fileID: 2258977375873273251, guid: 2ff8e547f8ecdc942a2ad92e894c736e, type: 3}
   squashAndStretch: {fileID: 4188070016092583621}
+  afkTimer: 0.25
   moveSpeed: 1.5
   attackRange: 6
   attackCooldown: 1.5

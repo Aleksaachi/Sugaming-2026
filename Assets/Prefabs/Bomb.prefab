@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7525098822642325195}
   - component: {fileID: 481277999921356165}
   - component: {fileID: -2358234023709334364}
+  - component: {fileID: 7211373575886422436}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -106,3 +107,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   destroyAfter: 2
   explosion: {fileID: 5467294918525526556, guid: b50cd41ada2cd1b4990a67d1acf52e37, type: 3}
+  damage: 2
+  explosionRadius: 2.5
+  knockbackForce: 1.5
+  squashAndStretch: {fileID: 7211373575886422436}
+--- !u!114 &7211373575886422436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790532399187575633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f8d1cf618155b489f069e8931775f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SquashAndStretch
+  animationTime: 0.125
+  timer: 0
+  strenght: 0.125
+  half: 0
+  xScale: 0
+  yScale: 0
+  baseScale: {x: 0, y: 0, z: 0}

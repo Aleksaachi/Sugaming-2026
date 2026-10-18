@@ -9,8 +9,12 @@ public class RangedEnemyController : BaseEnemy
     [SerializeField] private Transform firePoint;
 
     private float lastAttackTime;
-    void Update()
+    new void Update()
     {
+        base.Update();
+
+        if (afkTimer > 0f) return;
+
         if (player == null)
             return;
 

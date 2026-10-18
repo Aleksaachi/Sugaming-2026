@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private Image healthBarFill;
-    [SerializeField] private GameObject healthBar;
+    [SerializeField] public GameObject healthBar;
     [SerializeField] private GameObject hitParticlesPrefab;
     private Rigidbody2D rb;
     private Vector2 moveInput;

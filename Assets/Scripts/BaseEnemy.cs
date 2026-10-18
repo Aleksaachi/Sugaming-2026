@@ -10,6 +10,7 @@ public class BaseEnemy : MonoBehaviour
     protected Rigidbody2D rb;
     protected Transform player;
     public SquashAndStretch squashAndStretch;
+    public float afkTimer;
 
     protected virtual void Start()
     {
@@ -19,6 +20,10 @@ public class BaseEnemy : MonoBehaviour
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
             player = playerObj.transform;
+    }
+    protected void Update()
+    {
+        afkTimer-= Time.deltaTime;
     }
 
     public virtual void takeDamage(float damage)

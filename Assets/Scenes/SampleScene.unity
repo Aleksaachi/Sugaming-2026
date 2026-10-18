@@ -2362,16 +2362,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1389914654753023693, guid: bc0d4672202e7f342ae128698520a4e7, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 1389914654753023693, guid: bc0d4672202e7f342ae128698520a4e7, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 1389914654753023693, guid: bc0d4672202e7f342ae128698520a4e7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 25
+      propertyPath: m_AnchoredPosition.y
+      value: -55.9
       objectReference: {fileID: 0}
     - target: {fileID: 1877714299414520542, guid: bc0d4672202e7f342ae128698520a4e7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2527,7 +2519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7393122248646571953, guid: bc0d4672202e7f342ae128698520a4e7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 61.2
+      value: 107.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393122248646571953, guid: bc0d4672202e7f342ae128698520a4e7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

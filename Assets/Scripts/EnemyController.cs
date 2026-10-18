@@ -8,6 +8,7 @@ public class EnemyController : BaseEnemy
     private float lastAttackTime;
     void FixedUpdate()
     {
+        if (afkTimer > 0f) return;
         if (knockbackTimer > 0)
         {
             knockbackTimer -= Time.fixedDeltaTime;
@@ -21,6 +22,7 @@ public class EnemyController : BaseEnemy
     }
     void OnCollisionStay2D(Collision2D collision)
     {
+        if (afkTimer > 0f) return;
         if (collision.gameObject.CompareTag("Player"))
             if(Time.time - lastAttackTime >= attackCooldown)
             {

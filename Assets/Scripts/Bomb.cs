@@ -5,21 +5,32 @@ public class Bomb : MonoBehaviour
     public float destroyAfter;
     public GameObject explosion;
     float timer;
+    float bounceTimer;
 
     [SerializeField] private int damage = 1;
     [SerializeField] private float explosionRadius = 2.5f;
     [SerializeField] private float knockbackForce = 1.5f;
+    public SquashAndStretch squashAndStretch;
     void Start()
     {
+        squashAndStretch.Play();
         timer = destroyAfter;
-        timer += Random.Range(-0.5f, 0.5f);
+        float extraTime = Random.Range(-0.5f, 0.5f);
+        timer += extraTime;
+        bounceTimer += extraTime;
     }
     void Update()
     {
+        bounceTimer -= Time.deltaTime;
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
             Explode();
+        }
+        if (bounceTimer <= 0)
+        {
+            squashAndStretch.Play();
+            bounceTimer = 0.5f;
         }
     }
     private void Explode()

@@ -20,8 +20,11 @@ public class BossController : BaseEnemy
         PickRandomDirection();
     }
 
-    void Update()
+    new void Update()
     {
+        base.Update();
+        if (afkTimer > 0f) return;
+
         directionTimer -= Time.deltaTime;
         if (directionTimer <= 0f)
             PickRandomDirection();
@@ -56,6 +59,7 @@ public class BossController : BaseEnemy
     }
     private void SpawnBombs()
     {
+        if (afkTimer > 0f) return;
         if (bombPrefab == null) 
             return;
 

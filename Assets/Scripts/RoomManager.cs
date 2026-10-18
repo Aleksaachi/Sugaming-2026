@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class RoomManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class RoomManager : MonoBehaviour
     int counter = 0;
     int roomNumber = 0;
     int shopCounter = -1;
+    float timer;
+    bool loading;
+    string sceneToLoad;
     void Awake()
     {
         instance = this;
@@ -23,12 +27,18 @@ public class RoomManager : MonoBehaviour
     public void GoToNextRoom()
     {
         if (changingScenes) return;
-    
-        string sceneToLoad;
-        if (roomNumber == bossStage)
+
+        if (roomNumber == bossStage + 1)
+        {
+            sceneToLoad = "Win";
+            Destroy(PlayerController.instance.gameObject, 0.6f);
+            Destroy(PlayerController.instance.healthBar, 0.6f);
+        }
+        else if (roomNumber == bossStage)
         {
             sceneToLoad = bossRooms[Random.Range(0, bossRooms.Count)];
-        }else if (shopCounter == 0)
+        }
+        else if (shopCounter == 0)
         {
             sceneToLoad = shopRooms[Random.Range(0, shopRooms.Count)];
         }
@@ -57,6 +67,26 @@ public class RoomManager : MonoBehaviour
         roomNumber++;
         shopCounter--;
         changingScenes = true;
+        DarkScreen.instance.Cover(SceneManager.GetActiveScene(), SceneManager.GetActiveScene());
+        timer = 0.5f;
+        loading = true;
+    }
+    void Update()
+    {
+        if (!loading) return;
+
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            loading = false;
+            LoadNextScene();
+        }
+    }
+    void LoadNextScene()
+    {
         SceneManager.LoadSceneAsync(sceneToLoad);
     }
 }

@@ -9,6 +9,7 @@ public class Room : MonoBehaviour
     public Transform pickupSpot;
     public List<GameObject> rewards;
     public List<GameObject> enemies;
+    public ParticleSystem doorParticles;
     bool cleared;
     void Awake()
     {
@@ -26,6 +27,7 @@ public class Room : MonoBehaviour
         {
             Instantiate(rewards[Random.Range(0, rewards.Count)], pickupSpot.position, Quaternion.identity);
             PlayerItemHolder.TriggerItems(Trigger.OnRoomClear, transform.position);
+            doorParticles.Play();
             cleared = true;
         }
         else if (cleared)

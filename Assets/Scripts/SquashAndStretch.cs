@@ -10,7 +10,7 @@ public class SquashAndStretch : MonoBehaviour
     public float yScale;
     public Vector3 baseScale;
     bool animationInProgress = false;
-    void Start()
+    void Awake()
     {
         baseScale = transform.localScale;
     }
