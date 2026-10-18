@@ -25,7 +25,7 @@ public class DashingEnemyController : BaseEnemy
         currentState = State.Walking;
         cooldownTimer = dashCooldown;
     }
-    void Update()
+    new void Update()
     {
         if (player == null)
             return;
@@ -95,7 +95,7 @@ public class DashingEnemyController : BaseEnemy
     {
         if(currentState != State.Dashing)
             return;
-            
+
         if (collision.gameObject.CompareTag("Player"))
             if(Time.time - lastAttackTime >= attackCooldown)
             {

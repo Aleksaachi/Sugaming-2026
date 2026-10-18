@@ -73,12 +73,18 @@ public class PlayerController : MonoBehaviour
         {
             chargeTimer += Time.deltaTime;
             chargeTimer = Mathf.Clamp(chargeTimer, 0f, maxChargeMultiplier / chargeSpeed);
+
+            float chargePercent = chargeTimer / (maxChargeMultiplier / chargeSpeed);
+            if (spriteRenderer != null)
+                spriteRenderer.color = Color.Lerp(Color.white, Color.red, chargePercent);
         }
         if (Input.GetMouseButtonUp(0) && isCharging)
         {
             isCharging = false;
             lastAttackTime = Time.time;
             Attack();
+            if (spriteRenderer != null)
+                spriteRenderer.color = Color.white;
         }
         if (invincibilityTimer > 0)
         {
