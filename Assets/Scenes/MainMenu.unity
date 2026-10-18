@@ -542,6 +542,7 @@ GameObject:
   - component: {fileID: 401635370}
   - component: {fileID: 401635369}
   - component: {fileID: 401635368}
+  - component: {fileID: 401635371}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -564,9 +565,9 @@ RectTransform:
   - {fileID: 1901466119}
   m_Father: {fileID: 1535153942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 32, y: 32}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -928, y: -508}
   m_SizeDelta: {x: 500, y: 128}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &401635368
@@ -663,6 +664,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401635366}
   m_CullTransparentMesh: 1
+--- !u!114 &401635371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401635366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eed7abc4621ee24392712f5ba25048e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationGrowOnHover
+  growTime: 0.1
+  time: 0
+  growScale: 1.05
 --- !u!1 &494213099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -57, y: -13}
+  m_AnchoredPosition: {x: -19, y: -13}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &868253756
@@ -1190,9 +1206,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1535153942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 82, y: 348}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -878, y: -186.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063330178
@@ -1267,7 +1283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -138, y: -13}
+  m_AnchoredPosition: {x: -100, y: -13}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1122916692
@@ -1320,6 +1336,7 @@ GameObject:
   - component: {fileID: 1213694613}
   - component: {fileID: 1213694612}
   - component: {fileID: 1213694611}
+  - component: {fileID: 1213694614}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -1342,9 +1359,9 @@ RectTransform:
   - {fileID: 397453162}
   m_Father: {fileID: 1535153942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 32, y: 170}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -928, y: -360}
   m_SizeDelta: {x: 400, y: 128}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1213694611
@@ -1441,6 +1458,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213694609}
   m_CullTransparentMesh: 1
+--- !u!114 &1213694614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213694609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eed7abc4621ee24392712f5ba25048e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationGrowOnHover
+  growTime: 0.1
+  time: 0
+  growScale: 1.05
 --- !u!1 &1336540460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,11 +1661,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1063330177}
   - {fileID: 164659136}
   - {fileID: 838595967}
   - {fileID: 1213694610}
   - {fileID: 401635367}
-  - {fileID: 1063330177}
   - {fileID: 868253755}
   - {fileID: 1122916691}
   m_Father: {fileID: 0}

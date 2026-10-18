@@ -19,7 +19,10 @@ public class Room : MonoBehaviour
     {
         RoomManager.instance.changingScenes = false;
         PlayerItemHolder.instance.transform.position = spawnPoint.position;
-        if (enemies.Count == 0) cleared = true;
+        if (enemies.Count == 0){
+            doorParticles.Play();
+            cleared = true;
+        }
     }
     void Update()
     {

@@ -3,13 +3,9 @@ using UnityEngine;
 public class SellBox : MonoBehaviour
 {
     public float interactRange;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public ParticleSystem particles;
+    public SquashAndStretch squashAndStretch;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) 
@@ -18,6 +14,8 @@ public class SellBox : MonoBehaviour
         {
             PlayerItemHolder.RemoveLastItem();
             PlayerItemHolder.instance.AddCoins(5);
+            particles.Play();
+            squashAndStretch.Play();
         }
     }
 }

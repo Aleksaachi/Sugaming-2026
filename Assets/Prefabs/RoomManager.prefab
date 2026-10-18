@@ -59,6 +59,6 @@ MonoBehaviour:
   shopRooms:
   - Shop1
   - Shop2
-  itemRoomRange: {x: 2, y: 3}
-  bossStage: 10
+  itemRoomRange: {x: 2, y: 4}
+  bossStage: 14
   changingScenes: 0

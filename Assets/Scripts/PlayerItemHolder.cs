@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor.Search;
 
 public class PlayerItemHolder : MonoBehaviour
 {
@@ -29,10 +30,14 @@ public class PlayerItemHolder : MonoBehaviour
     public static void AddItem(Item itemToAdd)
     {
         instance.items.Add(itemToAdd);
+        ItemCounter.instance.UpdateItems(itemToAdd, instance.items.Count);
     }
     public static void RemoveLastItem()
     {
         instance.items.RemoveAt(instance.items.Count-1);
+
+        if (instance.items.Count != 0) ItemCounter.instance.UpdateItems(instance.items[instance.items.Count-1], instance.items.Count);
+        else ItemCounter.instance.UpdateItems();
     }
     void Update()
     {

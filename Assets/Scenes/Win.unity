@@ -5598,6 +5598,7 @@ GameObject:
   - component: {fileID: 1775896469}
   - component: {fileID: 1775896468}
   - component: {fileID: 1775896467}
+  - component: {fileID: 1775896470}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -5719,6 +5720,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775896465}
   m_CullTransparentMesh: 1
+--- !u!114 &1775896470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775896465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eed7abc4621ee24392712f5ba25048e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationGrowOnHover
+  growTime: 0.1
+  time: 0
+  growScale: 1.05
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

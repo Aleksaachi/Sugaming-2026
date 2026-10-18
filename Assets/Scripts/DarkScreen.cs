@@ -16,7 +16,10 @@ public class DarkScreen : MonoBehaviour
     bool active;
     void Awake()
     {
-        if (instance != null) Destroy(gameObject);
+        if (instance != null){ 
+            Destroy(gameObject);
+            return;
+        }
         instance = this;
         SceneManager.activeSceneChanged += Uncover;
     }
