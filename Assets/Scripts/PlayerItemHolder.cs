@@ -41,9 +41,6 @@ public class PlayerItemHolder : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T)){
-            TriggerItems(Trigger.OnTest, transform.position);
-        }
         if (Input.GetKeyDown(KeyCode.Escape)){
             PlayerController.instance.Die();
         }

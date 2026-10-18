@@ -14,17 +14,28 @@ public class MainMenu : MonoBehaviour
     }
     void Update()
     {
-        if (!changingScene) return;
-
-        
-        if (timer > 0)
+        if (!changingScene)
         {
-            timer -= Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.JoystickButton0))
+            {
+                PlayButton();
+            }
+            else if (Input.GetKeyDown(KeyCode.JoystickButton1))
+            {
+                QuitButton();
+            }
         }
         else
         {
-            changingScene = false;
-            SceneManager.LoadSceneAsync("SampleScene");
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+            }
+            else
+            {
+                changingScene = false;
+                SceneManager.LoadSceneAsync("SampleScene");
+            }
         }
     }
     public void QuitButton()

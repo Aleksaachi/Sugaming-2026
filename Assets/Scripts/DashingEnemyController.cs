@@ -23,7 +23,7 @@ public class DashingEnemyController : BaseEnemy
     {
         base.Start();
         currentState = State.Walking;
-        cooldownTimer = dashCooldown;
+        cooldownTimer = dashCooldown + Random.Range(0, dashCooldown);
     }
     new void Update()
     {

@@ -30,7 +30,7 @@ public class ShopPedestal : MonoBehaviour
             itemDisplay.transform.localPosition = new Vector3(startPos.x, newY, startPos.z);
         }
         if (!taken 
-        && Input.GetKeyDown(KeyCode.E) 
+        && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1))
         && Vector3.Distance(transform.position, PlayerItemHolder.instance.transform.position) <= pickupRange
         && PlayerItemHolder.instance.coinCounter >= price)
         {

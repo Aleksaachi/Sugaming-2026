@@ -10,7 +10,7 @@ public class ShopPickup : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, PlayerItemHolder.instance.transform.position) <= pickupRange
         && PlayerItemHolder.instance.coinCounter >= price
-        && Input.GetKeyDown(KeyCode.E))
+        && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)))
         {
             PlayerItemHolder.TriggerItems(Trigger.OnPickup, transform.position);
             PlayerItemHolder.instance.AddCoins(coins);

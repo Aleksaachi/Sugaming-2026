@@ -8,7 +8,7 @@ public class SellBox : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) 
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)) 
         && Vector3.Distance(transform.position, PlayerItemHolder.instance.transform.position) <= interactRange
         && PlayerItemHolder.instance.items.Count > 0)
         {

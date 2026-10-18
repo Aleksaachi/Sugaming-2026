@@ -64,12 +64,15 @@ public class PlayerController : MonoBehaviour
         if(moveInput != Vector2.zero)
             lastFacingDirection = moveInput.normalized;
 
-        if (Input.GetMouseButtonDown(0) && Time.time - lastAttackTime >= attackCooldown)
+        bool hitInputDown = Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetMouseButtonDown(0);
+        bool hitInput = Input.GetKey(KeyCode.JoystickButton0) || Input.GetMouseButton(0);
+        bool hitInputUp = Input.GetKeyUp(KeyCode.JoystickButton0) || Input.GetMouseButtonUp(0);
+        if (hitInputDown && Time.time - lastAttackTime >= attackCooldown)
         {
             isCharging = true;
             chargeTimer = 0f;
         }
-        if (Input.GetMouseButton(0) && isCharging)
+        if (hitInput && isCharging)
         {
             chargeTimer += Time.deltaTime;
             chargeTimer = Mathf.Clamp(chargeTimer, 0f, maxChargeMultiplier / chargeSpeed);
@@ -78,7 +81,7 @@ public class PlayerController : MonoBehaviour
             if (spriteRenderer != null)
                 spriteRenderer.color = Color.Lerp(Color.white, Color.red, chargePercent);
         }
-        if (Input.GetMouseButtonUp(0) && isCharging)
+        if (hitInputUp && isCharging)
         {
             isCharging = false;
             lastAttackTime = Time.time;
