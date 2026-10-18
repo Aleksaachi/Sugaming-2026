@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.WSA;
 
 public class Bomb : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Bomb : MonoBehaviour
     public GameObject explosion;
     float timer;
     float bounceTimer;
+    public bool isActive = true;
 
     [SerializeField] private int damage = 1;
     [SerializeField] private float explosionRadius = 2.5f;
@@ -13,6 +15,12 @@ public class Bomb : MonoBehaviour
     public SquashAndStretch squashAndStretch;
     void Start()
     {
+        if(isActive)
+            Activate();
+    }
+    public void Activate()
+    {
+        isActive = true;
         squashAndStretch.Play();
         timer = destroyAfter;
         float extraTime = Random.Range(-0.5f, 0.5f);
@@ -21,12 +29,13 @@ public class Bomb : MonoBehaviour
     }
     void Update()
     {
+        if(!isActive)
+            return;
+            
         bounceTimer -= Time.deltaTime;
         timer -= Time.deltaTime;
         if (timer <= 0)
-        {
             Explode();
-        }
         if (bounceTimer <= 0)
         {
             squashAndStretch.Play();
